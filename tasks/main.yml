@@ -45,10 +45,14 @@
 #   loop:
 #     - "SourceCodePro"
 
-- name: .zshrc
+- name: Link dotfiles into home directory
   ansible.builtin.file:
-    src: "{{ ansible_env.PWD }}/roles/ansible-shell-mac/files/.zshrc"
-    path: "{{ ansible_env.HOME }}/.zshrc"
+    src: "{{ ansible_env.PWD }}/roles/ansible-shell-mac/files/{{ item }}"
+    path: "{{ ansible_env.HOME }}/{{ item }}"
     state: link
     owner: "{{ ansible_env.USER }}"
-    mode: 0644
+  loop:
+    - .profile
+    - .zprofile
+    - .zshenv
+    - .zshrc
