@@ -125,6 +125,10 @@ then
   compinit
 fi
 
+### h
+export PATH=$PATH:$HOME/.git/h
+eval "$(h --setup ~/repos)"
+
 ### GOLANG ###
 export GOPATH=$HOME/golang
 export GOROOT=/opt/homebrew/Cellar/go/$(go version | { read _ _ v _; echo ${v#go}; })/libexec
