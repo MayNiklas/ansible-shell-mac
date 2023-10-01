@@ -116,7 +116,7 @@ source ${share_path}/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${share_path}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # add latex to path
-eval "$(/usr/libexec/path_helper)"
+# eval "$(/usr/libexec/path_helper)"
 
 if type brew &>/dev/null
 then
