@@ -14,6 +14,8 @@ fi
 alias -s md=subl
 alias -s nix=subl
 
+alias -s whisper=whisper --model large --task transcribe
+
 # revert last n commits
 grv() {
     git reset --soft HEAD~$1
