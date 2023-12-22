@@ -62,3 +62,18 @@
     - .zprofile
     - .zshenv
     - .zshrc
+
+- name: Create folder for bash scripts if it does not exist
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.bin"
+    state: directory
+    mode: "0700"
+
+- name: Link bash scripts into home directory
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/ansible-shell-mac/files/{{ item }}"
+    path: "{{ ansible_env.HOME }}/.bin/{{ item }}"
+    state: link
+    owner: "{{ ansible_env.USER }}"
+  loop:
+    - rcode

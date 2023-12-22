@@ -84,10 +84,6 @@ venv() {
     fi
 }
 
-rcode () {
-    code --remote ssh-remote+$1 /home/$(whoami)/$2
-}
-
 # custom greeting
 echo Welcome back $(whoami)!
 echo Uptime: $(uptime)
@@ -130,6 +126,9 @@ fi
 ### h
 export PATH=$PATH:$HOME/.git/h
 eval "$(h --setup ~/repos)"
+
+### ~/.bin
+export PATH=$PATH:$HOME/.bin
 
 ### GOLANG ###
 export GOPATH=$HOME/golang

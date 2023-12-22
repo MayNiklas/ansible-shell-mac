@@ -1,0 +1,33 @@
+#!/bin/bash
+
+function get_ls() {
+    ssh $user@$target "ls $path"
+}
+
+function get_path() {
+    count=0
+    while [ $count -lt 3 ]; do
+        files=$(get_ls)
+        selection=$(echo $files | tr ' ' '\n' | fzf)
+        path=$path/$selection
+        ((count++))
+    done
+}
+
+target=$1
+if [ -z $target ]; then
+    echo "No target specified!"
+    exit 1
+fi
+
+user=$(whoami)
+path=/home/nik/code
+
+# if $2 is not set, get path
+if [ -z $2 ]; then
+    get_path
+else
+    path=/home/nik/$2
+fi
+
+code --remote ssh-remote+$user@$target $path
