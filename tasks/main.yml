@@ -7,6 +7,18 @@
     state: directory
     mode: "0700"
 
+- name: Ensure alacritty is installed
+  homebrew_cask:
+    name: alacritty
+    state: present
+
+- name: Link alacritty config into home directory
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/ansible-shell-mac/files/alacritty"
+    path: "{{ ansible_env.HOME }}/.config/alacritty"
+    state: link
+    owner: "{{ ansible_env.USER }}"
+
 - name: Ensure taps
   homebrew_tap:
     name: homebrew/cask-fonts
