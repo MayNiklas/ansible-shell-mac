@@ -63,7 +63,7 @@ repos() {
 }
 
 db() {
-    open https://reiseauskunft.bahn.de/
+    open https://www.bahn.de/
 }
 
 venv() {
