@@ -154,3 +154,5 @@ plugins=()
 # Path to oh-my-zsh installation
 export ZSH="$HOME/.git/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+
+unsetopt autocd
