@@ -16,6 +16,9 @@ alias -s nix=subl
 
 alias -s whisper=whisper --model large --task transcribe
 
+# tailscale
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
 # revert last n commits
 grv() {
     git reset --soft HEAD~$1
