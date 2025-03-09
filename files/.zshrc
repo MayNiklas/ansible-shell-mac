@@ -19,6 +19,9 @@ alias -s whisper=whisper --model large --task transcribe
 # tailscale
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+# KiCad
+alias kicad="/Applications/KiCad/KiCad.app/Contents/MacOS/kicad"
+
 # revert last n commits
 grv() {
     git reset --soft HEAD~$1
